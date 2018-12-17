@@ -17,17 +17,19 @@ public class Encryption {
      */
     public static void main(String[] args) {
         //Variables
-        Scanner keyedInput = new Scanner(System.in);
+        Scanner keyedInput = new Scanner(System.in),keyedInput2 = new Scanner(System.in);
         String encrypted = "",startMessage,decrypted = "";
         char temporaryChar;
         int ascii,oneTwoThree = 0;
         while (oneTwoThree != 3){
-            System.out.println("Encrypt, decrypt or exit?");
+            encrypted = "";
+            decrypted = "";
+            System.out.println("Encrypt (1), decrypt (2) or exit (3)?");
             oneTwoThree = keyedInput.nextInt();
             switch (oneTwoThree){
                 case 1:
                     System.out.println("Please enter a message to encrypt.");
-                    startMessage = keyedInput.nextLine();
+                    startMessage = keyedInput2.nextLine();
                     //Looping through the String
                     for(int i = 0; i < startMessage.length(); i = i + 1){
                         temporaryChar = startMessage.charAt(i);
@@ -41,7 +43,7 @@ public class Encryption {
                     break;
                 case 2:
                     System.out.println("Please enter a message to decrypt.");
-                    startMessage = keyedInput.nextLine();
+                    startMessage = keyedInput2.nextLine();
                     for(int i = 0; i < startMessage.length(); i = i + 1){
                     temporaryChar = startMessage.charAt(i);
                         ascii = (int)temporaryChar;
